@@ -1,0 +1,58 @@
+Glossary of terms
+-----------------
+
+* Applicative order evaluation
+    Evaluate the arguments and then apply(the procedure).
+
+* Normal order evalution
+    "Fully expand and then reduce".
+
+* Recursive process
+    A type of process characterized by a chain of deferred operations.
+    The sequence of operations to be performed are generally stored in a stack.
+    (not to be confused with a recursive "procedure")
+
+* Iterative process
+    A type of process whose state can be summarized by a fixed number of "state
+    variables", together with a fixed rule that describes how the state
+    variables should be updated as the process moves from state to state and an
+    (optional) end test that specifies conditions under which the process
+    should terminate.
+
+* Tail-recursive implementation
+    Execute an iterative process in constant space, even if the iterative
+    process is described by a recursive procedure.
+    (MIT-Scheme has a tail-recursive implementation unlike Ada, Pascal and C)
+
+* Tree recursive procedure
+    A procedure that calls itself twice each time it is invoked.
+    (generates a tree recursive process)
+
+* Tabulation / Memoization
+    An approach to coping with redundant computations in the case of tree
+    recursive process whereby we automatically construct a table of values as
+    they are computed. Each time we are asked to apply the procedure to some
+    argument, we first look to see if the value is already stored in the table,
+    in which case we avoid performing the redundant computation.
+
+* Order of Growth
+    Let n be a parameter that measures the size of the problem, and let R(n) be
+    the amount of computational resources the process requires.
+    Then, R(n) has order of growth theta(f(n)), (written R(n) = theta(f(n))),
+    if there are positive constants k1 and k2 independent of n such that
+        
+        k1*f(n) <= R(n) <= k2*f(n)
+
+    for any sufficiently large value of n.
+    In other words, for large n, the value R(n) is sandwiched between k1*f(n)
+    and k2*f(n).)
+
+* Lamé's Theorem
+    If Euclid's Algorithm requires k steps to compute the GCD of some pair,
+    then the smaller number in the pair must be greater than or equal to the
+    kth Fibonacci number.
+
+    Let n be the smaller of the two inputs to Euclid's Algorithm. If the
+    process takes k steps, then we must have n >= Fib(k) ~= p^k/sqrt(5), where
+    p is the golden ratio. Therefore the number of steps k grows as the
+    logarithm (to the base p) of n. Hence, the order of growth is theta(log n).
