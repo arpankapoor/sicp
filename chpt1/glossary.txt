@@ -1,5 +1,5 @@
-Glossary of terms
------------------
+Glossary
+--------
 
 * Applicative order evaluation
     Evaluate the arguments and then apply(the procedure).
@@ -56,3 +56,10 @@ Glossary of terms
     process takes k steps, then we must have n >= Fib(k) ~= p^k/sqrt(5), where
     p is the golden ratio. Therefore the number of steps k grows as the
     logarithm (to the base p) of n. Hence, the order of growth is theta(log n).
+
+* Fermat's Little Theorem
+    If n is a prime number and a is any positive integer less than n, then a
+    raised to the nth power is congruent to a modulo n.
+
+* Carmichael Numbers
+    Numbers that fool the Fermat test.
