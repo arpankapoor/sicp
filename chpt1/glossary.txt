@@ -2,7 +2,7 @@ Glossary
 --------
 
 * Applicative order evaluation
-    Evaluate the arguments and then apply(the procedure).
+    Evaluate the arguments and then apply (the procedure).
 
 * Normal order evalution
     "Fully expand and then reduce".
@@ -63,3 +63,25 @@ Glossary
 
 * Carmichael Numbers
     Numbers that fool the Fermat test.
+
+* Higher-Order Procedures:
+    Procedures that manipulate procedures.
+
+* let is just syntactic sugar for:
+  ((lambda (<var1> ...<varn>)
+      <body>)
+   <exp1>
+   .
+   .
+   <expn>)
+
+   The scope of a variable specified by a let expression is the body of the
+   let.
+
+   The variables' value is calculated outside the let.
+
+* A number x is called a FIXED POINT of a function f if x satisfies the
+  equation f(x) = x.
+
+* Average Damping
+    Approach of averaging successive approximations to a solution.

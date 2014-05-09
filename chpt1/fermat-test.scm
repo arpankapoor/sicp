@@ -1,5 +1,5 @@
 ;; Fermat's Little Theorem
-;;  If n is a primem number number and a is any positive integer less than n,
+;;  If n is a prime number number and a is any positive integer less than n,
 ;;  then a raised to the nth power is congruent to a modulo n.
 
 ;; To check the primality of n, pick a random number a < n and compute the

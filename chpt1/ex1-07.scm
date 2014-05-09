@@ -10,12 +10,12 @@
 ;;    square of the guessed square root and the actual number is insignifiacnt
 ;;    with respect to the tolerance. So, the procedure that improves the guess
 ;;    runs only a few times until the test deems the guess good-enough.
-;;    example: (sqrt 0.000001) gives 0.031260655525445276 (actual sqrt = 0.001)
+;;    eg: (sqrt 0.000001) gives 0.031260655525445276 (actual sqrt = 0.001)
 
 ;;    For large number (~ 10^13), the guess-improving procedure has to run a
 ;;    huge number of times to improve the guess significantly and bring it
 ;;    within the tolerance level.
-;;    example: (sqrt 10000000000000) isn't computed in < 5min.
+;;    eg: (sqrt 10000000000000) isn't computed in < 5min.
 
 
 ;; An alternative strategy for implementing good-enough? is to watch how guess
@@ -43,4 +43,4 @@
   (sqrt-iter 1.0 x))
 
 ;; Q. Does this work better for small and large numbers?
-;; A. Sure, it does. Try the examples above.
+;; A. Yes it does. Try the examples above.
