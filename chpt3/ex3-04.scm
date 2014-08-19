@@ -1,0 +1,40 @@
+;; Modify the make-account procedure of exercise 3.3 by adding another local
+;; state variable so that, if an account is accessed more than seven
+;; consecutive times with an incorrect password, it invokes the procedure
+;; call-the-cops.
+(define (make-account balance password)
+  (define (withdraw amount)
+    (if (>= balance amount)
+        (begin (set! balance (- balance amount))
+               balance)
+        "Insufficient funds"))
+  (define(deposit amount)
+    (begin (set! balance (+ balance amount))
+           balance))
+  (define (call-the-cops)
+    (display "CALLING THE COPS. INTRUSION!!!"))
+  ;; The below procedure returns a procedure.
+  (define (dispatch p m)
+    (if (eq? p password)
+        (begin (set! count 0)
+               (cond ((eq? m 'withdraw) withdraw)
+                     ((eq? m 'deposit) deposit)
+                     (else (error "Unknown request -- MAKE-ACCOUNT"
+                                  m))))
+        (lambda (x)
+          (if (>= count 7)
+              (call-the-cops)
+              (begin (set! count (+ 1 count))
+                     "Incorrect password")))))
+  dispatch)
+
+(define acc (make-account 100 'secret-password))
+((acc 'secret-password 'withdraw) 40)
+((acc 'some-other-password 'deposit) 50)
+((acc 'some-other-password 'deposit) 50)
+((acc 'some-other-password 'deposit) 50)
+((acc 'some-other-password 'deposit) 50)
+((acc 'some-other-password 'deposit) 50)
+((acc 'some-other-password 'deposit) 50)
+((acc 'some-other-password 'deposit) 50)
+((acc 'some-other-password 'deposit) 50)

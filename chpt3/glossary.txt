@@ -1,0 +1,19 @@
+* ENCAPSULATION reflects the general system-design principle known as the
+  hiding principle: One can make a system more modular and robust by protecting
+  parts of the system from each other; that is, by providing information access
+  only to those parts of the system that have a _need to know_.
+
+* Functional Programming
+    Programming without any use of assignments.
+    Procedures could be viewed as computing mathematical functions.
+
+* Referentially transparent
+    A language that supports the concept that "equals can be substituted for
+    equals" in an expression without changing the value of the expression.
+
+* Aliasing
+    The phenomenon of a single computational object being accessed by more than
+    one name.
+
+* Imperative programming
+    Programming that makes extensive use of assignments.
